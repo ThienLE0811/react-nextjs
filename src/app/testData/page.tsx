@@ -6,8 +6,8 @@ interface TestDataProps {
 
 const TestDataLayout = ({ children }: TestDataProps) => {
   return (
-    <div>
-      <h2>Đây là test data</h2>
+    <div className="p-8">
+      <h2>Đây là test data, muốn biết thêm hãy /...</h2>
       {children}
     </div>
   );
