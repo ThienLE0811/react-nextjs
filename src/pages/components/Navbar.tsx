@@ -45,9 +45,9 @@ const Navbar = () => {
   return (
     <div className="mx-auto px-[8%] flex justify-between pt-8 pb-8">
       <Link href="/" className="font-bold text-xl">
-        Thien
+        Thien Le
       </Link>
-      <div className="items-center gap-5 flex">
+      <div className="items-center gap-8 flex">
         {/* <DarkModeToggle /> */}
         {links.map((link) => (
           <Link key={link.id} href={link.url} className={"text-[#EDEDED"}>

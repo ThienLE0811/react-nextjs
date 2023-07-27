@@ -3,8 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Navbar from "@/pages/components/Navbar";
-
-const inter = Inter({ subsets: ["latin"] });
+import Footer from "@/pages/components/Footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -20,10 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={"min-h-min"}>
         <QueryClientProvider client={queryClient}>
           <Navbar />
           {children}
+          <Footer />
         </QueryClientProvider>
       </body>
     </html>
