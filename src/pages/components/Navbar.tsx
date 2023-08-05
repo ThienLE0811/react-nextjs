@@ -1,7 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
+import LogginButton from "./Login/LoginButton";
+import { Modal } from "antd";
+import FormLogin from "./Login/FormLogin";
+import { AppContext } from "@/config/AppContext";
 
 // import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 // import { signOut, useSession } from "next-auth/react";
@@ -34,14 +38,17 @@ const links = [
   },
   {
     id: 6,
-    title: "Dashboard",
-    url: "/dashboard",
+    title: <LogginButton href={""} content={"Login"}></LogginButton>,
+    url: "",
   },
 ];
 
 const Navbar = () => {
   //   const session = useSession();
+  const { state, dispatch } = useContext(AppContext);
+  const { showModalLogin } = state;
 
+  console.log("state:: ", state);
   return (
     <div className="mx-auto px-[8%] flex justify-between pt-8 pb-8">
       <Link href="/" className="font-bold text-xl">
@@ -55,6 +62,14 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
+
+      <Modal
+        open={showModalLogin}
+        onCancel={() => dispatch({ type: "SHOW_MODAL_LOGIN", payload: false })}
+        footer={false}
+      >
+        <FormLogin />
+      </Modal>
     </div>
   );
 };

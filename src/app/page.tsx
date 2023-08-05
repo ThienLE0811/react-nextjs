@@ -12,7 +12,7 @@ export default function Home() {
       <div className={"flex flex-col h-[100%] gap-[50px]"}>
         <h1
           className={
-            "font-bold text-[72px] bg-gradient-to-b from-green-800 via-green-600 to-blue-500 bg-clip-text text-transparent"
+            "font-bold text-[72px] bg-gradient-to-b from-green-800 via-green-600 to-blue-500 bg-clip-text text-transparent animate__animated animate__bounce"
           }
         >
           Better design for your digital products.
@@ -29,7 +29,7 @@ export default function Home() {
             Get
           </button>
         </Link> */}
-        <Button href="/dashboard" />
+        <Button href="/dashboard" content="Get" />
       </div>
       <div className={"h-[100%]"}>
         <Image

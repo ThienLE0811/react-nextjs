@@ -37,7 +37,7 @@ const TestData = async ({ params }: { params: { name: string } }) => {
   // return <div>Xin chào: {params.slug}</div>;
   const dataPosts = await getData();
   const dataPhotos = await getPhotos();
-
+  console.log("dataPosts", dataPosts);
   //   const [posts, photos] = await Promise.all([dataPosts, dataPhotos]);
 
   return (
